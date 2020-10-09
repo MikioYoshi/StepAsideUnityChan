@@ -132,6 +132,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeftGoalMark
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010741184072, guid: dc7effc448ee647fea43e6c8787f2b24, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 4000012178294422, guid: dc7effc448ee647fea43e6c8787f2b24, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.4
@@ -534,7 +538,7 @@ GameObject:
   - component: {fileID: 1096953322}
   m_Layer: 0
   m_Name: Goal
-  m_TagString: Untagged
+  m_TagString: GoalTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

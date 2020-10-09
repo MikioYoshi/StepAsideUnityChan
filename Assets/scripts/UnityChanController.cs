@@ -10,6 +10,8 @@ public class UnityChanController : MonoBehaviour
     private float velocityX = 10f;
     private float velocityY = 10f;
     private float movableRange = 3.4f;
+    private float coefficient = 0.99f;
+    private bool isEnd = false;
 
 
     // Start is called before the first frame update
@@ -25,6 +27,15 @@ public class UnityChanController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (this.isEnd)
+        {
+            this.velocityZ *= this.coefficient;
+            this.velocityZ *= this.coefficient;
+            this.velocityY *= this.coefficient;
+            this.myAnimator.speed *= coefficient;
+        }
+
         float inputVelocityX = 0;
         float inputVelocityY = 0;
 
@@ -54,5 +65,21 @@ public class UnityChanController : MonoBehaviour
 
 
         this.myRigitbody.velocity = new Vector3(inputVelocityX, inputVelocityY, this.velocityZ);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "CarTag" || other.gameObject.tag == "TrafficConeTag")
+        {
+            this.isEnd = true;
+        }
+        if (other.gameObject.tag == "GoalTag")
+        {
+            this.isEnd = true;
+        }
+        if (other.gameObject.tag == "CoinTag")
+        {
+            Destroy(other.gameObject);
+        }
     }
 }
