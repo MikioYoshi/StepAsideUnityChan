@@ -16,6 +16,9 @@ public class UnityChanController : MonoBehaviour
     private GameObject stateText;
     private GameObject scoreText;
     private int score = 0;
+    private bool isLButtonDown = false;
+    private bool isRButtonDown = false;
+    private bool isJButtonDown = false;
 
     // Start is called before the first frame update
     void Start()
@@ -48,16 +51,16 @@ public class UnityChanController : MonoBehaviour
         float inputVelocityX = 0;
         float inputVelocityY = 0;
 
-        if (Input.GetKey(KeyCode.LeftArrow) && -this.movableRange < this.transform.position.x)
+        if ((Input.GetKey(KeyCode.LeftArrow) || this.isLButtonDown) && -this.movableRange < this.transform.position.x)
         {
             inputVelocityX = -this.velocityX;
         }
-        else if (Input.GetKey(KeyCode.RightArrow) && this.movableRange > this.transform.position.x)
+        else if ((Input.GetKey(KeyCode.RightArrow) || this.isRButtonDown) && this.movableRange > this.transform.position.x)
         {
             inputVelocityX = this.velocityX;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && -this.transform.position.y < 0.5)
+        if ((Input.GetKeyDown(KeyCode.Space) || this.isJButtonDown) && this.transform.position.y < 0.5)
         {
             this.myAnimator.SetBool("Jump", true);
             inputVelocityY = this.velocityY;
@@ -74,6 +77,7 @@ public class UnityChanController : MonoBehaviour
 
 
         this.myRigitbody.velocity = new Vector3(inputVelocityX, inputVelocityY, this.velocityZ);
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -98,5 +102,30 @@ public class UnityChanController : MonoBehaviour
             Destroy(other.gameObject);
 
         }
+    }
+
+    public void GetMyJummpButtonDown()
+    {
+        this.isJButtonDown = true;
+    }
+    public void GetMyJummpButtonUp()
+    {
+        this.isJButtonDown = false;
+    }
+    public void GetMyLeftButtonDown()
+    {
+        this.isLButtonDown = true;
+    }
+    public void GetMyLeftButtonUp()
+    {
+        this.isLButtonDown = false;
+    }
+    public void GetMyRightButtonDown()
+    {
+        this.isRButtonDown = true;
+    }
+    public void GetMyRightButtonUp()
+    {
+        this.isRButtonDown = false;
     }
 }
