@@ -328,6 +328,7 @@ GameObject:
   - component: {fileID: 7637976293919914204}
   - component: {fileID: 7637976293918784028}
   - component: {fileID: 7637976293914578132}
+  - component: {fileID: -4049614170574887362}
   m_Layer: 0
   m_Name: CarPrefab
   m_TagString: CarTag
@@ -413,3 +414,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 1, z: 0.7}
   m_Center: {x: 0, y: 0.4, z: -0.07}
+--- !u!114 &-4049614170574887362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7637976293916583132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 204920003b98d4bbfaec746135708cd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

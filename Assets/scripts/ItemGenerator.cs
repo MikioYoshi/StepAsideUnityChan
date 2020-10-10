@@ -8,9 +8,11 @@ public class ItemGenerator : MonoBehaviour
     public GameObject coinPrefab;
     public GameObject conePrefab;
 
+
     private int startPos = 80;
     private int goalPos = 360;
     private float posRange = 3.4f;
+
 
 
     // Start is called before the first frame update
@@ -53,6 +55,7 @@ public class ItemGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
+
 }
