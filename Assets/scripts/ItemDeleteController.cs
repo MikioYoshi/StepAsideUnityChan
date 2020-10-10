@@ -15,7 +15,7 @@ public class ItemDeleteController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.z <= unitychan.transform.position.z -5)
+        if (transform.position.z <= unitychan.transform.position.z - 5)
         {
             Destroy(gameObject);
         }
