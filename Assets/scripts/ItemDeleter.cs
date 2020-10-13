@@ -2,20 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemDeleteController : MonoBehaviour
+public class ItemDeleter : MonoBehaviour
 {
-    private GameObject unitychan;
+    //private GameObject unitychan;
 
     // Start is called before the first frame update
     void Start()
     {
-        this.unitychan = GameObject.Find("unitychan");
+        //this.unitychan = GameObject.Find("unitychan");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.z <= this.unitychan.transform.position.z - 5)
+        //MainCameraと各PrehabのZ軸座標を比較
+        if (transform.position.z <= Camera.main.transform.position.z)
         {
             Destroy(gameObject);
         }
