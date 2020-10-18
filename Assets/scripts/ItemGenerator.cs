@@ -35,7 +35,7 @@ public class ItemGenerator : MonoBehaviour
         //unitychanのgameobjectを取得
         this.unitychan = GameObject.Find("unitychan");
 
-        //スタート地点からアイテムを出すためにitemGenePosにstartPosを入れる
+        //スタート地点からアイテムを出すためにitemGenPosにstartPosを入れる
         this.itemGenPos = this.startPos;
     }
 
@@ -81,9 +81,9 @@ public class ItemGenerator : MonoBehaviour
                 }
             }
             //アイテムを生成する線を前に出す
-            this.itemGenPos += itemGenRange;
+            this.itemGenPos += this.itemGenRange;
             //プレイヤーが越えたときアイテムを出す線を前に出す
-            this.itemGenLine += itemGenRange;
+            this.itemGenLine += this.itemGenRange;
         }
     }
 }
